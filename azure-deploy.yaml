@@ -23,7 +23,7 @@ stages:
       displayName: Login to ACR
       inputs:
         command: login
-        containerRegistry: $(acrName)
+        containerRegistry: $(subscription)
     - task: Docker@2
       displayName: Build an image
       inputs:
