@@ -1,0 +1,33 @@
+trigger:
+- main
+
+resources:
+- repo: self
+
+variables:
+  # subscription: ''
+  # acrName: ''
+  # resourceGroup: ''
+  deployfrom: 'Deploy'
+  vmImage: 'ubuntu-18.04'
+  imageName: 'bus-stop-docker'
+
+stages:
+- stage: Build
+  jobs:
+  - job: Deploy_Scripts
+    pool:
+      vmImage: '$(vmImage)'
+    steps:
+    - task: Docker@2
+      displayName: Login to ACR
+      inputs:
+        command: login
+        containerRegistry: $(acrName)
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        repository: $(imageName)
+        command: build
+        Dockerfile: Deploy/Dockerfile
+            
