@@ -11,6 +11,7 @@ variables:
   # deployfrom: 'Deploy'
   vmImage: 'ubuntu-18.04'
   imageName: 'bus-stop-docker'
+  tag: '$(Build.BuildId)'
 
 stages:
 - stage: Build
