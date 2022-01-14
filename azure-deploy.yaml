@@ -30,4 +30,17 @@ stages:
         repository: $(imageName)
         command: buildAndPush
         Dockerfile: Deploy/Dockerfile
-            
+  - stage: Deploy
+    displayName: 'Deploy the container'
+    dependsOn: Build
+    jobs:
+    - job: Deploy
+      displayName: Deploy job
+      pool:
+        vmImage: '$(vmImage)'
+      steps:
+      - task: AzureWebContainer@1
+        inputs:
+        appName: 'bus-stop'
+        azureSubscription: $(subscription)
+        imageName:  $(imageName)
