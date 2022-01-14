@@ -46,4 +46,4 @@ stages:
       inputs:
         appName: 'bus-stop'
         azureSubscription: $(subscription)
-        imageName:  $(acrName)'.azurecr.io'/$(imageName):$(build.buildId)
+        imageName:  $(acrName).azurecr.io/$(imageName):$(build.buildId)
