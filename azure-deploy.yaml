@@ -43,4 +43,4 @@ stages:
       inputs:
         appName: 'bus-stop'
         azureSubscription: $(subscription)
-        imageName:  $(imageName)
+        imageName:  $(arcName)/$(imageName)
