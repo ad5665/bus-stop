@@ -31,7 +31,6 @@ stages:
         repository: $(imageName)
         command: buildAndPush
         Dockerfile: Deploy/Dockerfile
-        buildContext: $(Build.Repository.LocalPath)
         tags: |
           $(tag)
 - stage: Deploy
