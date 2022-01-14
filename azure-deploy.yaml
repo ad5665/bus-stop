@@ -9,7 +9,7 @@ variables:
   # acrName: ''
   # resourceGroup: ''
   # deployfrom: 'Deploy'
-  # vmImage: 'ubuntu-18.04'
+  vmImage: 'ubuntu-18.04'
   imageName: 'bus-stop-docker'
 
 stages:
