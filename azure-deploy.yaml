@@ -39,8 +39,8 @@ stages:
       pool:
         vmImage: '$(vmImage)'
       steps:
-      - task: AzureWebContainer@1
+      - task: AzureWebAppContainer@1
         inputs:
-        appName: 'bus-stop'
-        azureSubscription: $(subscription)
-        imageName:  $(imageName)
+          appName: 'bus-stop'
+          azureSubscription: $(subscription)
+          imageName:  $(imageName)
